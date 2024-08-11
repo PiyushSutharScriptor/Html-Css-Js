@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    style="font-size: 90px; font-weight: bolder; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;">
+    Promises and Promise Chains</div>
+
+</body>
+
+<script>
+    // let promise = new Promise(function(resolve,reject){
+    //     alert("This is alert in promise")
+    //     resolve(98)
+    //     // reject(80)
+    // })
+
+
+    // console.log("Hello PIyush Bhai")
+
+    // setTimeout(function(){
+    //     console.log("Hello in 2 seconds")
+    // },2000);
+
+    // console.log("How are you ")
+    // console.log(promise)
+
+
+    // //Promise resolved
+    // let promise = new Promise ((resolve,reject)=>{
+    //     console.log("promise is pending")
+    //     setTimeout(()=>{
+    //         console.log("Iam promise and I fullfilled")      
+    //         resolve(true)  
+    //     },5000)
+    // })
+    // console.log(promise)
+
+    // //Promise rejected
+    // let promise = new Promise((resolve,reject)=>{
+    //     console.log("Promise Pending")  
+    //     setTimeout(()=>{
+    //         console.log("Promise is rejected")   
+    //         reject(new Error("Error found promise"))
+    //     },3000)
+    // })
+
+
+    // //Reject and Resolve //Prallel Execution :
+    // let p1 = new Promise ((resolve,reject)=>{
+    //     console.log("Promise is Pending(p1)")
+    //     setTimeout(()=>{
+    //         // console.log("Promise is resolved")
+    //         resolve(true)
+    //     },3000)
+    // })
+    // let p2 = new Promise((resolve,reject)=>{
+    //     console.log("Promise Pending (p2)")  
+    //     setTimeout(()=>{
+    //         // console.log("Promise is rejected")   
+    //         reject(new Error("Error found promise"))
+    //         reject(false)
+    //     },3000)
+    // })
+    // console.log(p1,p2)
+
+    // p1.then((value)=>{
+    //     console.log(value)
+    // })
+
+    // p2.catch(()=>{
+    //     console.log("Error occurred in p2 but catched")
+    // })
+
+
+
+
+
+
+    // let p6 = new Promise((resolve, reject) => {
+    //     console.log("Promise Pending p6")
+    //     setTimeout(() => {
+    //         resolve(true)
+    //     }, 3000)
+    // })
+
+    // let p7 = new Promise((resolve, reject) => {
+    //     console.log("Promise Pending p7")
+    //     setTimeout(() => {
+    //         reject(new Error("p7 error occurred"))
+    //     }, 3000)
+    // })
+
+    // p6.then((value) => {
+    //     console.log(value)
+    // })
+
+    // p7.then((value) => {
+    //     console.log(value)
+    // }, (error) => {
+    //     console.log(error)
+    // });
+
+    // p7.catch((error)=>{
+    //     console.log("p7 promise error catched")
+    // })
+
+
+    // let b1 = new Promise((resolve,reject)=>{
+    //     setTimeout(()=>{
+    //         console.log("Resolved after 2 seconds")
+    //         resolve(10)
+    //     },2000)
+    // })
+
+    // // console.log(b1)
+    // b1.then((value)=>{
+    //     console.log(value)
+
+    //     let b2 = new Promise((resolve,reject)=>{
+    //         resolve("Done with Promise chain")
+
+    //     })
+    // })
+
+    // let promise2 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         console.log("Successfully resolved promise 2")
+    //         resolve(786)
+    //     }, 2000)
+    // })
+
+    //===>Promise Chain
+
+    // promise2.then((value) => {
+    //     console.log(value)
+    //     let promise3 = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             console.log("Successfully resolved promise 3")
+    //             resolve(687)
+    //             return promise3;
+    //         },2000)
+    //     }).then((value) => {
+    //         console.log(value)
+
+    //         let promise4 = new Promise((resolve, reject) => {
+    //             setTimeout(() => {
+    //                 console.log("Successfully resolved promise 4")
+    //                 resolve(777)
+    //                 return promise4;
+    //             },2000)
+    //         }).then((value) => {
+    //             console.log(value)
+
+    //             let promise5 = new Promise((resolve, reject) => {
+    //                 setTimeout(() => {
+    //                     console.log("Successfully resolved promise 5")
+    //                     resolve(888)
+    //                     return promise5;
+    //                 },2000)
+    //             }).then((value) => {
+    //                 console.log(value)
+    //                 return 45;
+    //             }).then((value)=>{
+    //                 console.log(value)
+    //                 return 50
+    //             }).then((value)=>{
+    //                 console.log("value of automatic promise created")
+    //                 console.log(value)
+    //                 return new Promise ((resolve,reject)=>{
+    //                     console.log("Successfully resolved return promise")    
+    //                     resolve(51)
+    //                 }).then((value)=>{
+    //                     console.log(value)
+    //                 })
+    //             })
+    //         })
+    //     })
+    // })
+
+
+    //Onload function with promises :       
+
+
+    const loadscript = ((src) => {
+        return new Promise((resolve, reject) => {
+
+            let script = document.createElement("script")
+            script.src = src
+            document.body.appendChild(script)
+            script.onload = () => {
+                alert("Load Scrip Passed")
+                resolve(1);
+            }
+            script.onerror = () => {
+                alert("Load Script failed")
+                reject(0)
+            }
+        })
+    })
+
+    let p = loadscript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js")
+    p.then((value) => {
+        console.log(value)
+    })
+
+
+
+</script>
+
+</html>

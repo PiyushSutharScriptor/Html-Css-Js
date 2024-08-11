@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Hello World
+    <h1 id="first" class="second">This is Heading</h1>
+    <span>First Span</span>
+    <span>Second Span</span>
+
+    <!-- Hidden :  -->
+    <div class="ex" hidden>This text is going to hide</div>
+</body>
+<script>
+
+    let first = document.getElementById("first");
+
+    let a = document.getElementsByTagName("span")[0];
+    console.log(a);
+
+    let b = document.getElementsByTagName("span")[0];
+    console.dir(b);
+
+    console.log(document.body.firstChild);
+
+    console.log(document.body.firstElementChild);
+
+    // INNER AND OUTER HTML:
+    //It can be used with id only. 
+    //Id is more compatable in element nodes
+    console.log(first.outerHTML);
+    console.log(first.innerHTML);
+    console.log(first.innerHTML = "<b>Excellent</b>");
+    console.log(first.outerHTML = "<div>this is a website</div>");
+
+    document.write("<br>dlfhsaofh</br>");
+    // console.log(document.body.textContent)
+
+    console.log(document.body.firstChild);
+    console.log(document.body.firstChild.data);
+
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 100px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>Finally with cases</div>
+</body>
+
+<script>
+    //---------------------------Case : 1------------------------
+
+// try {
+//     console.log(piyush)
+// }
+
+// catch (err) { 
+//     console.log("Custom error maked ")
+//     console.log(p)
+// }
+// // console.log("next line of code")
+// finally{
+//     console.log("This is finally line of code")
+// }
+
+//---------------------------Case : 2------------------------
+
+let fun = ()=>{
+    try{
+        console.log("try code of line")
+        return //<<-------program returned but finally still execute.
+    }
+
+    catch{
+        console.log("catch code of line")
+    }
+
+    finally{
+        console.log("finally line of code")
+    }
+}
+fun()
+console.log("Last line of code")
+</script>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Arrow function with objects </div>
+</body>
+<script>
+    //------ex:1----------
+let greet = () => {
+    console.log("Hello Piyush Suthar")
+}
+greet();
+
+//------ex:2----------
+let greet2 = () => console.log("How are you?"); console.log("Iam fine");
+greet2() //Not recommed
+
+//------ex:3----------
+let greet3 = (name) => {
+    console.log("Chaitanya University" + name)
+}
+greet3(" located in Himayatnagar")
+
+//------ex:4----------
+let greet4 = name => {
+    console.log("Rangareddy district" + name)
+}
+greet4(", Hyderabad")
+
+//------ex:5----------
+let a = (name, company) => {
+    console.log(name + " Powered by " + company)
+}
+a("Chaitanya University", "Sunstone")
+
+//------ex:6----------
+const x = {
+    name: "Piyush",
+    role: "MERN Developer",
+    experience: 30,
+    welcome: () => {
+        console.log(`You are welcome ${this.name}`)
+    },
+
+    welcome2: function () {
+        console.log(`You are welcome : ${this.name} \nthe role is ${this.role}`)
+    },
+
+
+    funset: function () {
+        setTimeout(() => {
+            // console.log(this)
+            // console.log(that)
+            console.log(`With arrow function : My name is ${this.name}`)
+            }, 2000)
+    },
+
+    funset2 : function(){
+        let that = this
+        setTimeout(function(){
+            console.log(`Without arrow function : My name is ${that.name}`)
+            console.log(this)
+            console.log(that)
+            }, 3000)
+    }
+}
+
+console.log(x)
+console.log(x.name)
+console.log(x.role)
+console.log(x.experience)
+console.log(x.welcome)
+x.welcome()  //This will not work in arrow function.
+x.welcome2() //This will work in normal funtion only.
+x.funset()
+x.funset2()
+
+
+//------ex:6----------
+let greet5 = (name,resort)=>{
+    console.log(` Hello ${name}!`)
+    console.log(`Are you going to ${resort}`)
+}
+
+greet5("Piyush" , "Wonderla")
+</script>
+</html>

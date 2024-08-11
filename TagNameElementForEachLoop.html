@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        background-color: aqua;
+    }
+
+    li {
+        padding: 10px 20px;
+        list-style: none;
+        font-weight: 700;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    span {
+        display: flex;
+        padding: 10px 15px;
+        flex-direction: row;
+
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <span>Hellow1</span>
+    <span>Hellow2</span>
+    <span>Hellow3</span>
+    <span>Hellow4</span>
+</body>
+
+<script>
+    document.getElementsByTagName("ul")[0].firstElementChild.style.color = "yellow"
+    document.getElementsByTagName("ul")[0].lastElementChild.style.color = "green";
+    document.getElementsByTagName("li")[0].style.background = "yellow";
+    Array.from(document.getElementsByTagName("li")).forEach((element) => {
+        element.style.background = "red";
+    })
+
+    Array.from(document.getElementsByTagName("span")).forEach((ele) => {
+        ele.style.color = "red";
+    })
+</script>
+
+</html>

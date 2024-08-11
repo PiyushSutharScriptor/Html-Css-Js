@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            padding: 50px;
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div>!! try And catch in JavaScript !!</div>
+    
+</body>
+<script>
+    setTimeout(()=>{
+    console.log("Fetching id and password..........")
+},1000)
+
+try{
+    console.log(animals)
+}
+
+catch(error){
+    // console.log(error)
+    console.log("error found but catched  " + error)
+}
+
+// finally{
+//     console.log("ye toh chalega hi chalega")
+// }
+
+setTimeout(()=>{
+
+    let x = ()=>{
+        
+        try{
+            console.log(sports)
+        }
+        
+        catch{
+            console.log("Second error using try in setTimeout")
+        }
+    }
+x();    
+},2000)
+
+setTimeout(()=>{
+
+    let y = ()=>{
+        try{
+            setTimeout(()=>{
+                console.log(cat)
+            },10)
+        }
+        
+        catch(error){
+            console.log("Third error using setTimeout in try")
+        }
+    }
+y();    
+},3000)
+
+
+setTimeout(()=>{
+    console.log("Successfully Fetched id and password..........") , 2000
+},4000)
+
+
+setTimeout(()=>{
+    console.log("Hacking password.........."),3000
+},5000)
+
+setTimeout(()=>{
+    console.log("!! Successfully Hacked password !!"),4000
+},6000)
+
+</script>
+</html>

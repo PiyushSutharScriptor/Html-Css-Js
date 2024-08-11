@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Closures</div>
+</body>
+<script>
+    let message = "Global"
+function hello ()
+{
+    message = "Local"
+    console.log("Hello : " + message)
+    let c = function hello2(){
+        console.log("hello2 : " + message)
+    }
+    message = "New message"
+    return c
+}
+
+let d = hello()
+d()
+
+
+const x = ()=>{
+    let a = 1;
+    console.log(a)
+    const y = ()=>{
+        let a = 2;
+        console.log(a)
+        const z = ()=>{
+            let a = 3;
+            console.log(a)
+        }
+        z()
+    }
+    y()
+}
+
+x()
+
+</script>
+</html>

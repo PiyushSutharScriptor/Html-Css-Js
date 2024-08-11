@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Local Storage and its methods
+    </div>
+</body>
+<script>
+    localStorage.setItem("animal","dog")
+
+
+let key = prompt("Enter the key of localStorage : ")
+let value = prompt("Enter the value of localStorage : ")
+
+//Methods
+
+//---------------1. setItem ------------------------------
+localStorage.setItem(key,value)
+
+//---------------2. getItem ------------------------------
+console.log(`The value at key ${key} is ${localStorage.getItem(key)}`)
+
+//---------------3. removeItem ------------------------------
+
+//-----case:1-------
+localStorage.removeItem("red")
+
+//-----case:2-------
+if(key=="silver"||key=="green"){
+    localStorage.removeItem(key)
+}
+
+//---------------4. clear ------------------------------
+
+//-----case:1-------
+// localStorage.clear()
+
+//-----case:2-------
+// localStorage.clear()
+// if(key==0||key==1){
+//     localStorage.clear()
+// }
+
+//---------------5. length ------------------------------
+let l = localStorage.length
+console.log(l)
+
+let i = localStorage.key(0)
+console.log("the key at index 0 is " + i)
+
+
+//------------local storage function for updation notification
+
+// window.onstorage = (e)=>{
+//     alert("changed")
+//     console.log(e)
+// }
+
+</script>
+</html>

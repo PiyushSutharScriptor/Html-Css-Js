@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is callback function</h1>
+</body>
+<script>
+    // https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+
+function loadscript(src, callback) {
+    var script = document.createElement("script");
+    script.src = src
+    script.onload = function () {
+        console.log("the page appended with src : " + src);
+        callback(null, src)
+    }
+
+    script.onerror = function () {
+        console.log("Error caused in loading src : " + src)
+        callback(Error("got some error because of code"))
+    }
+    document.body.appendChild(script)
+}
+
+function hello(error, src) {
+
+    if (error) {
+        console.log(error)
+        return;
+    }
+
+    else {
+        alert("alet ::: callback ::: successfully loaded the src  :  " + src)
+    }
+}
+
+
+loadscript("https://cdn.jsdedfdflivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", hello)
+
+
+//New way of loadscript with inner function ===>
+// loadscript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" , function hello(){
+//     alert("Piyush bhai ho gya.")
+// })
+
+
+</script>
+</html>
+
+ 

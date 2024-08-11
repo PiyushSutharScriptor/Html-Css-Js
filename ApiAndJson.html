@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div>API and JSON</div>
+</body>
+<script>
+    
+//==> JSON practice (parse, stringify)
+// let jsonobj = {
+//     name : "Piyush",
+//     class : "Undergraduation",
+//     company : "Sunstone"
+// }
+
+// console.log(jsonobj)
+// let myjsonstr = JSON.stringify(jsonobj)
+// console.log(myjsonstr)
+
+// let replacename = myjsonstr.replace("Piyush","Subaham")
+// console.log(replacename)
+// myjsonstr = myjsonstr.replace("Piyush","Subaham")
+// console.log(myjsonstr)
+
+// let myjsonobj = JSON.parse(myjsonstr)
+// console.log(myjsonobj)
+
+
+//-------------Fetching API----------------------------
+
+
+let p1 = fetch("https://goweather.herokuapp.com/weather/Ny")
+
+
+p1.then((response)=>{
+    console.log("200-299 is good : " + response.status)
+    console.log(response.ok)
+    console.log(response.headers)
+    return response.json()
+    // return response.text() //Case:02
+}).then((value1)=>{
+    console.log(value1)
+})
+
+//------------Header Request-------------------------
+
+// let pp1 = fetch("https://goweather.herokuapp.com/weather/Ny",   {
+//     headers : {
+//         "Authentication" : "secret"
+//     }
+// })
+
+
+</script>
+</html>

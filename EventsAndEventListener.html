@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        font-size: 50px;
+    }
+</style>
+<body>
+    <!-- <div onmousemove="console.log('mouse move')" onmouseover="console.log('mouse over')" onmouseenter="console.log('mouse entered')" onmouseleave="console.log('mouse leave')">Here</div>  -->
+    <!-- <div onmouseleave="console.log('mouse leave')">lorem455</div> -->
+    <!-- <div onmousemove="console.log('mouse move')">Here</div> -->
+
+
+    <!-- <button onclick="alert('Piyush bhai') ; let a = 10; console.log(a);" >Click Here</button> -->
+    <!-- <button onmouseenter="alert('Mouse ka cursor hatao Bhaiiii')" onclick="console.log('entry ho rahi he')">Hover Here</button> -->
+    <!-- </div> -->
+    <!-- </div> -->
+<!-- 
+    <div class="container">Experiment Here</div> -->
+
+    <div>
+        <button id="btn">Click Me</button>
+    </div>
+</body>
+<script>
+    // let a = document.getElementsByClassName("container")[0];
+// // a.onclick = () =>{
+// //     alert("Hlloo")  
+// // }
+
+// a.onclick = (()=>{
+//     alert("Hey followers")
+//     a.innerHTML = "Hello world"
+// })
+
+
+// let x = (e) =>{
+//     console.log(e.target)
+//     alert("hello piyush bhai")
+// }
+
+// let y = (e)=>{
+//     alert("How are you");
+// }
+
+let z = function(e){
+    console.log(e.target)
+    console.log(e.type)
+    console.log(e.clientX , e.clientY)
+    console.log(e.currentTarget)
+    alert("Hello Piyush Sir")
+}
+
+let a = document.getElementById("btn");
+a.addEventListener('click' , z)
+
+// a.addEventListener('click' , y)
+
+// ab = prompt("enter a number : ");
+// if(ab=="2")
+// {
+//     a.removeEventListener('click' , x);
+// }
+
+</script>
+</html>
+
+
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            font-size: 50px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+
+        <li>async And await</li>
+        <li>awaiting multiple promises into a async function
+        </li>
+        <li>awaiting multiple async functions into a function</li>
+    </ul>
+</body>
+<script>
+    //awaiting multiple promises into a async function
+
+    // async function weather() {
+    //     let hydweather = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("35");
+    //         }, 2000)
+    //     })
+
+    //     let judweather = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("45");
+    //         }, 4000)
+    //     })
+
+    //     // hydweather.then(alert)
+    //     // judweather.then(alert)
+
+    //     console.log("Fetching Hyderabad whether.....")
+    //     let hw = await hydweather
+    //     console.log("Successfully fetched : " + hw)
+
+    //     console.log("Fetching jodhpur whether.....")
+    //     let jw = await judweather
+    //     console.log("Successfully fetched : " + jw)
+
+    //     return [hw, jw]
+    // }
+
+    // let a = weather()
+
+    // a.then((value) => {
+    //     console.log(value)
+    // })
+
+    // let animal = () => {
+    //     console.log("Hello my name is piyush")
+    // }
+    // let b = animal()
+
+
+
+    //Method 2 : awaiting multiple async functions into a function: 
+
+    const sports = async () => {
+        let cricket = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Won Cricket")
+            }, 2000)
+        })
+
+        let football = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Won Football")
+            }, 4000)
+        })
+
+        console.log("Waiting for Cricket result......")
+        let sc = await cricket;
+        console.log(sc)
+        console.log("Waiting for Football result......")
+        let sf = await football;
+        console.log(sf)
+
+        return [sc, sf]
+    }
+
+    const sports2 = async () => {
+        console.log("!! Sports is good for health !!")
+    }
+
+    const sports3 = async () => {
+
+        let z = await sports2()
+
+        let s = await sports()
+        console.log(s)
+
+    }
+
+    sports3()
+
+
+</script>
+
+</html>

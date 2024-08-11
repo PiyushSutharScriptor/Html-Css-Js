@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    ||||||Outer||||||
+
+    <div class="container">
+        ------Inner Container------
+        <div id="first">This is a first line of code.</div>
+        ------Inner Container------
+    </div>
+
+    ||||||Outer||||||
+</body>
+
+<script>
+    let div = document.getElementsByTagName("div")[0];
+// // add.innerHTML = add.innerHTML + "<h1>My name is Piyush Suthar</h1>"
+
+
+// let add = document.createElement("h2");
+// add.innerHTML = "<h2>This is a div tag</h2>"
+// div.appendChild(add);
+
+// let addmore = document.createElement("h3");
+// addmore.innerHTML = "<h3>This is new h3 tag</h3>"
+// div.appendChild(addmore)
+
+let fadd = document.createElement("h4")
+fadd.innerHTML = "<h4>This is line for Insertion</h4>"
+
+// Below are one in the same ===>
+// div.appendChild(fadd)
+// div.append(fadd);
+// div.after(fadd);
+
+
+// Below are one in the same ===>
+// div.prepend(fadd);
+// div.before(fadd);
+
+//Replaces the selected element with the given tag.
+// div.replaceWith("p")
+
+</script>
+
+</html>

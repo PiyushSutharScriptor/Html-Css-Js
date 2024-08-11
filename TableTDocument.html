@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        background-color: rgb(255, 234, 0);
+    }
+
+    table {
+        border: 2px solid black;
+        background-color: cadetblue;
+    }
+
+    td,
+    th {
+        border: 1px solid black;
+        background-color: antiquewhite;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <table>
+            <caption>This is my academic report</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Marks</th>
+                    <th>Remarks</th>
+                </tr>
+
+            </thead>
+            <tr>
+                <td>Piyush</td>
+                <td>BCA</td>
+                <td>98</td>
+                <td>good</td>
+            </tr>
+
+            <tr>
+                <td>Piyush</td>
+                <td>BCA</td>
+                <td>98</td>
+                <td>good</td>
+            </tr>
+
+            <tr>
+                <td>Piyush</td>
+                <td>BCA</td>
+                <td>98</td>
+                <td>good</td>
+            </tr>
+
+            <tr>
+                <td>Piyush</td>
+                <td>BCA</td>
+                <td>98</td>
+                <td>good</td>
+            </tr>
+
+            <tr>
+                <td>Piyush</td>
+                <td>BCA</td>
+                <td>98</td>
+                <td>good</td>
+            </tr>
+
+            <tr>
+                <td>Piyush</td>
+                <td>BCA</td>
+                <td>98</td>
+                <td>good</td>
+            </tr>
+
+            <tfoot>This is foot of the table okk!!</tfoot>
+        </table>
+    </div>
+</body>
+
+<script>
+    let t = document.body.firstElementChild.firstElementChild;
+    console.log(t)
+    console.log(t.rows)
+    console.log(t.caption)
+    console.log(t.tHead.firstElementChild)
+    console.log(t.tFoot)
+    console.log(t.tBodies)
+    console.log(tr.cells)
+</script>
+
+</html>

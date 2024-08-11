@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+<style>
+    *{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+.heading{
+    color: rgb(0, 255, 85);
+    width: 100%;
+    height: auto;
+    text-align: center; 
+    font-size: 80px;
+    font-family: Lilita One;
+    margin-top: 40px;
+    margin-bottom: -80px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock{
+    width: 600px;
+    height: 90px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 10px rgb(0, 255, 85);
+    text-align: center; 
+    padding-top:40px ;
+    padding-bottom:60px ;
+}
+
+.digits{
+    background: white;
+    font-size: 80px;
+    padding: 0 10px;
+    font-family: Anton;
+}
+</style>
+
+<div class="heading">|| DIGITAL CLOCK ||</div>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <span class="digits" id="h">00</span>
+            <span class="digits">:</span>
+            <span class="digits" id="m">00</span>
+            <span class="digits">:</span>
+            <span class="digits" id="s">00</span>
+        </div>
+    </div>
+</body>
+
+<script>
+    let h = document.getElementById("h");
+let m = document.getElementById("m");
+let s = document.getElementById("s");
+
+setInterval(()=>{   
+    let date = new Date();
+    h.innerHTML = (date.getHours()<10?"0":"")+date.getHours();
+    m.innerHTML = (date.getMinutes()<10?"0":"")+date.getMinutes();
+    s.innerHTML = (date.getSeconds()<10?"0":"")+date.getSeconds();
+},1000)
+</script>
+
+</html>
+
+
+

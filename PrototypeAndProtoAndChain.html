@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Prototype and Proto </div>
+</body>
+<script>
+    //-----------Case:1-----------------\\
+
+let obj1 = {
+    name : "Piyush",
+    course : "JavaScript"
+}
+console.log("obj1.name : " + obj1.name)
+
+let obj2 = {
+    name2 : "Rohan",
+    city : "Hyderabad",
+    objfunction : ()=>{
+        console.log("Piyush suthar")
+    }
+}
+
+//Never do this : 
+obj1.__proto__ = obj2
+
+console.log("obj1.name : " + obj1.course)
+
+
+//-----------Case:2-----------------\\
+
+let p = {
+    name3 : "Shailesh",
+    village : "Gillaguda"
+}
+
+p.__proto__ = {
+    name4 : "Durgesh",
+    state : "Telangana"
+}
+
+obj2.__proto__ = p 
+console.log("obj2.state : " + obj2.state)
+// In the above case the series will go like this : 
+// obj2 => p => p.__proto__
+
+
+</script>
+</html>

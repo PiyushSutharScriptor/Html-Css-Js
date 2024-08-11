@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .yellow{
+    background-color: yellow;
+    color: black;
+}
+
+.red{
+    background-color: red;
+    color: white;
+}
+
+.blue{
+    background-color: rgb(52, 18, 162);
+    color: white;
+}
+
+
+</style>
+<body>
+    <div id="first">
+        <div class="span">This is piyush</div>
+    </div>    
+</body>
+<script>
+    first.className = "yellow red blue";
+console.log(first.classList);
+first.classList.remove("red");
+console.log(first.classList.remove("red"));
+console.log(first.classList)
+console.log(first.classList.add("red"))
+console.log(first.classList)
+console.log(first.classList.toggle("red"))
+console.log(first.classList);
+console.log(first.classList.contains("red"));
+</script>
+</html>

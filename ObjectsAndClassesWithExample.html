@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Objects and Classes with example : </div>
+</body>
+<script>
+//     !! Introduction !!
+// class ==> {Methods}
+// class{}
+// let xyz = instance (or) objects
+
+
+class railwayform {
+    sumbit(){
+        alert(this.name + " : Your form is submttted for train no.  " + this.tno)
+    }
+    cancel(){
+        alert(this.name + " : Your form is cancelled for train no.  " + this.tno)
+    }
+    fillname(personname,tno){
+        this.name = personname
+        this.tno = tno
+    }
+}
+
+let Piyush = new railwayform
+Piyush.fillname("Piyush",125400)
+
+let Umesh = new railwayform
+Umesh.fillname("Umesh",545411)
+
+let Umesh2 = new railwayform
+Umesh2.fillname("Umesh",125400)
+
+Umesh.sumbit()
+Piyush.sumbit()
+Umesh2.cancel()
+Piyush.cancel()
+Umesh.cancel()
+
+
+</script>
+</html>

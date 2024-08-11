@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div{
+        font-size: 80px;
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div>Error Object and Custom Error</div>
+</body>
+
+<script>
+    try {
+    piyush()
+}
+catch (error) {
+    console.log(error)
+    console.log("Error Name : " + error.name)
+    console.log("Error Message : " + error.message)
+}
+console.log("")
+
+//---------------------------------------------------------------//
+
+try {
+    throw new Error("This is custom error by Piyush")
+}
+
+catch (error) {
+    console.log(error)
+    console.log("Error Name : " + error.name)
+    console.log("Error Message : " + error.message)
+    console.log(error.stack)
+}
+console.log("")
+
+//---------------------------------------------------------------//
+
+try {
+    throw new ReferenceError("This is custom Reference error by Piyush")
+}
+
+catch (error) {
+    console.log(error)
+    console.log("Error Name : " + error.name)
+    console.log("Error Message : " + error.message)
+    console.log(error.stack)
+}
+console.log("")
+
+//---------------------------------------------------------------//
+
+//Program on driving age using try and catch and throwing custom errors
+try{
+    
+    let age = parseInt(prompt("Enter the age of driving : "))
+    if (age < 18) {
+        throw new SyntaxError("!!Invalid age less than 18!!")
+    }
+    
+    else {
+        console.log("Valid Age : "+ age)
+    }
+}
+
+catch(error){
+    console.log(error)
+    console.log("Error Name : " + error.name)
+    console.log("Error Message : " + error.message)
+}
+
+//---------------------------------------------------------------//
+
+
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Session storage and its methods : 
+    </div>
+</body>
+
+<script>
+    sessionStorage.setItem("Name1","Piyush")
+
+let key = prompt("Enter the key of session storage : ")
+let value = prompt("Enter the value of session storage : ")
+
+//methods : 
+
+// ---------setItem 
+sessionStorage.setItem(key,value)
+
+// ---------getItem 
+console.log(`The value at key ${key} is : ${sessionStorage.getItem(key)}`)
+
+// ---------clear()
+
+//case:01
+// sessionStorage.clear
+//case:02
+if(key=="blue" || key=="red")
+    {
+        sessionStorage.clear()
+    }
+
+// ---------removeItem()
+sessionStorage.removeItem("color")
+if(key==0 || key==1)
+    {
+        sessionStorage.removeItem(key)
+    }
+
+// ---------index key using key()
+console.log(sessionStorage.key("the key at index 0 is : " + 0))
+
+</script>
+
+</html>

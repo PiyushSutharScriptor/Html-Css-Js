@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 80px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            padding: 40px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Promise Api and its Methods</div>
+</body>
+
+<script>
+
+    //===> 1. Promise.all
+
+    let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 1")
+        }, 1000)
+    })
+
+    let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 2")
+        }, 2000)
+    })
+
+    let p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 3")
+        }, 3000)
+    })
+
+
+    // p1.then((value)=>{
+    //     console.log(value)
+    // })
+
+    // p2.then((value)=>{
+    //     console.log(value)
+    // })
+
+    // p3.then((value)=>{
+    //     console.log(value)
+    // })
+
+    let promiseall = Promise.all([p1, p2, p3])
+
+    promiseall.then((value) => {
+        console.log(value)
+    })
+
+
+    //===> 2. Promise.allSettled
+
+    let q1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error("Error found in q1"))
+
+        }, 1000)
+    })
+
+    let q2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 2")
+        }, 2000)
+    })
+
+    let q3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 3")
+        }, 3000)
+    })
+
+    let promiseallsettled = Promise.allSettled([q1, q2, q3])
+    promiseallsettled.then((value) => {
+        console.log(value)
+    })
+
+    //===> 3. Promise.race
+    let r1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 1")
+        }, 8000)
+    })
+
+    let r2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 2")
+        }, 2000)
+    })
+
+    let r3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 3")
+        }, 3000)
+    })
+
+    let promiserace = Promise.race([r1, r2, r3])
+    promiserace.then((value) => {
+        console.log("The winner of Promise race is : " + value)
+    })
+
+
+    //===> 4. Promise.any
+
+    let s1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 1")
+        }, 5000)
+    })
+
+    let s2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error("Error found at s2"))
+        }, 2000)
+    })
+
+    let s3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 3")
+        }, 3000)
+    })
+
+    let promiseany = Promise.any([s1, s2, s3]);
+    promiseany.then((value) => {
+        console.log("The winner of any promise is : " + value)
+    })
+
+
+    //===> 5. Promise.resolve
+
+    let t1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 1")
+        }, 1000)
+    })
+
+    let t2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 2")
+        }, 2000)
+    })
+
+    let t3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 3")
+        }, 3000)
+    })
+
+    let promiseresolve = Promise.resolve(108);
+    promiseresolve.then((value) => {
+        console.log(value)
+    })
+    //===> 6. Promise.resolve
+
+    let u1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 1")
+        }, 1000)
+    })
+
+    let u2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 2")
+        }, 2000)
+    })
+
+    let u3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Value 3")
+        }, 3000)
+    })
+
+    let promisereject = Promise.reject(new Error["Promise reject function"]);
+    promisereject.then((value) => {
+        console.log(value)
+    })
+
+
+</script>
+
+</html>

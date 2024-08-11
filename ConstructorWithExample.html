@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Constructors</div>
+</body>
+<script>
+    class railwayform {
+    constructor(personname,tno,address,mobile,seat){
+        console.log("constructor called with : " + personname  + " " + tno)
+        this.name = personname
+        this.tno = tno
+        this.address = address
+        this.mobile = mobile
+        this.seat = seat
+    }
+
+    sumbit(){
+        alert(this.name + " : Your form is submttted for train no.  " + this.tno)
+    }
+
+    cancel(){
+        alert(this.name + " : Your form is cancelled for train no.  " + this.tno)
+    }
+   
+    review(){
+        alert(this.name + " : your train no. is : " + this.tno + " with mobile no. " + this.mobile + " with address : " + this.address + " successfully reserved seat of : " + this.seat)
+    }
+}
+
+let Piyush = new railwayform("Karthik" , 871521)
+// Piyush.fillname("Piyush",125400)
+
+let Umesh = new railwayform("Umesh" , 456874)
+// Umesh.fillname("Umesh",545411)
+
+let Rahul = new railwayform("Rahul", 635434, "Haveli road" ,9632515874, "3ac:52")
+
+Umesh.sumbit()
+Piyush.sumbit()
+Rahul.review()
+
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerMan</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+    *{
+        color:rgb(0, 255, 30);
+        background-color: black;
+        font-family: "Space Mono", monospace;
+        font-weight: bolder;
+        font-size: 30px;
+        background-image: url("https://t4.ftcdn.net/jpg/04/84/13/17/360_F_484131785_BxNx43e4YpfcyjUAb6uS6kwxuPHPYcI8.jpg");
+        background-repeat:no-repeat;
+        background-size: cover; 
+    }
+    
+</style>
+<body>
+    <div id="text"></div>
+</body>
+<script>
+    let a = [
+    "$> initialiing hack tools..........",
+    "$> hacking tools ready..........",
+    "$> hacking account..........",
+    "$> username : durgesh_nai..........",
+    "$> receiving money from durgesh_nai account..........",
+    "$> trying password 200apx..........",
+    "$> trying................",
+    "$> trying password 400apx..........",
+    "$> trying................",
+    "$> trying password 600apx..........",
+    "$> trying................",
+    "$> Successfully received all amount.........."
+]
+
+const sleep = ()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(true)
+        },2000)
+    })
+}
+
+const showmsg = async(message)=>{
+    await sleep(2)
+    // console.log(message)
+    text.innerHTML = text.innerHTML+message + "<br>"
+}
+
+(async()=>{
+    for(let i=0 ; i<a.length ; i++)
+        {
+            await showmsg(a[i])
+        }
+})()
+
+
+</script>
+</html>

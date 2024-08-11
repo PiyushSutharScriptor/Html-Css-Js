@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Inheritance and extends keyword</div>
+</body>
+<script>
+
+    class animal{
+    constructor(name,action){
+        this.name = name
+        this.action = action
+    }
+
+    shout(){
+        console.log(`${this.name} is shouting`)
+    }
+
+    eating(){
+        console.log(`${this.name} is eating`)
+    }
+}
+
+class monkey extends animal{
+    sleeping(){
+        console.log(`${this.name} is sleeping`)
+    }
+}
+
+class reptile extends animal{
+    colorchange(){
+        console.log(`${this.name} is changing color to ${this.action}`)
+    }
+}
+
+class insects extends reptile{
+    running(){
+        console.log(`${this.name} is ${this.action}`)
+    }
+}
+
+let monkey1 = new monkey("chomu" , "black")
+monkey1.sleeping()
+
+let animal1 = new animal("kitty","cream")
+animal1.shout()
+
+let reptiles1 = new reptile("reptu" , "rgb")
+reptiles1.colorchange()
+
+let insects1 = new insects("scorpio" , "running")
+insects1.running()
+
+</script>
+</html>
+

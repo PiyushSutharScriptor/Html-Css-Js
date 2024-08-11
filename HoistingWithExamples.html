@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Hoisting with examples</div>
+</body>
+<script>
+    //Calling function before initialization : 
+greet()
+function greet(){
+    console.log("Piyush")
+}
+
+//Calling variable before initiallization :
+console.log(a)
+var a=10; //undefined
+console.log(a)
+
+//calling functions using let before initialization : 
+// greet2() //throws error
+
+let greet2 = ()=>{
+    console.log("Suthar")
+}
+
+//calling functions using var before initialization : 
+// greet3() //throws error
+
+let greet3 = ()=>{
+    console.log("Hyderabad")
+}
+
+//calling functions using const before initialization : 
+// greet4() //throws error
+
+const greet4 = ()=>{
+    console.log("Hyderabad")
+}
+
+// console.log(ab) //error
+let ab = "bca"
+
+// console.log(ac) //error
+const ac = "sunstone"
+
+console.log(ad) //Undefined
+var ad = "sunstone"
+
+</script>
+</html>

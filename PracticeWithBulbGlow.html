@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 10px;
+    }
+
+    body {
+        border: 2px solid white;
+        background-color: black;
+    }
+
+    button {
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    #bttn,#bttn1,#bttn2,#bttn3{
+        margin: 20px;
+    }
+    h1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-decoration: underline;
+        color: white;
+    }
+
+    .bulbcontainer{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .bulb{
+        background: yellow;
+        border-radius: 50%;
+        font-size: 60px;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <h1>Button for alerts : </h1>
+    <div><button onclick="alert('Hello Piyush')">First</button></div>
+    <div><button onclick="alert('Hello Ramesh')">Second</button></div>
+    <div><button onclick="alert('Hello Pintu bhai')">Third</button></div>
+    <div><button onclick="alert('Hello Mohan')">Forth</button></div>
+
+    <hr>
+
+    <h1>Bookmarks using href button : </h1>
+    <div><a href="https://google.com"><button>Google</button></a></div>
+    <div><a href="https://chrome.com"><button>Chrome</button></a></div>
+    <div><a href="https://yahoo.com"><button>Yahoo</button></a></div>
+    <div><a href="https://firefox.com"><button>Firefox</button></a></div>
+    
+    <hr>
+
+    <h1>Bookmarks using Event Listener and button : </h1>
+    <div><button id="bttn">Twitter</button></div>
+    <div><button id="bttn1">Amazon</button></div>
+    <div><button id="bttn2">Flipkart</button></div>
+    <div><button id="bttn3">Meesho</button></div>
+
+    <hr>
+
+    <div class="bulbcontainer bulb" id="bulb">Bulb</div>
+</body>
+
+<script>
+    //Event Listener for "twitter"
+    let a = document.getElementById("bttn");
+    a.addEventListener('click', function (e) {
+        window.location = "https://google.com" 
+    })
+
+    //Event Listener for "amazon"
+    let b = document.getElementById("bttn1");
+    b.addEventListener('click' , function(){
+        window.location = "https://amazon.com"
+    })
+
+    //Event Listener for "flipkart"
+    let c = document.getElementById("bttn2");
+    c.addEventListener('click' , function(){
+        window.location = "https://flipkart.com"
+    })
+
+    //Event Listener for "meesho"
+    let d = document.getElementById("bttn3");
+    d.addEventListener('click' , function(){
+        window.location = "https://meesho.com"
+    })
+
+    setInterval(async function(){
+        document.querySelector("#bulb").classList.toggle("bulb")
+    },300)
+
+    let x = document.getElementById("bulb")
+    
+    console.log(x.classList)
+    console.log(x.classList.length)
+    console.log(bulb.classList.length())
+
+</script>
+</html>

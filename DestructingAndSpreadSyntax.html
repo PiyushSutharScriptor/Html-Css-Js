@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Destructing and spread syntax</div>
+</body>
+<script>
+    //===>Destructuring 
+
+// let arr = [10,20,30,40,50]
+// let [a,b,c] = arr
+// console.log(a,b,c)
+
+// let arr2 = [60,70,80,90,100]
+// let [e,f, ...rest] = arr2
+// console.log(a,b,rest)
+// console.log(a,b,...rest)
+
+// let arr3 = [2,4,6,8,10,12,14]
+// let [g,,,...rest] = arr3
+// console.log(g,rest)
+// console.log(g,...rest)
+
+let {h,i}= {h:1,i:2}
+console.log(h,i)
+let {j,k} =  {j:54,k:87}
+console.log(j,k)
+
+
+//===>Spread operator => used to convert array to object with 
+//key and value pairs
+let arr4 = [1,2,3,4,5,6]
+let obj4 = {...arr4}
+console.log(obj4)
+
+//==> passing array to a function and doing operation
+let arr5 = [10,20,30]
+function sum(v1,v2,v3){
+    return v1+v2+v3
+}
+
+let sumofarray = sum(...arr5)
+console.log("Sum of array : " + sumofarray)
+
+let obj1 = {
+    name : "Piyush",
+    city : "Hyderabad",
+    company : "Consumers goods"
+}
+
+//==>React syntax used to change value in a object
+//The values will not override
+console.log({name : "Rohan" , company:"NoodlesStop",...obj1})
+
+//The values will override
+console.log({...obj1 , company : "Construction goods"})
+
+</script>
+</html>

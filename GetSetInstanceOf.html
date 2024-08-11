@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #1F2833;
+        }
+        div{
+            font-size: 80px;   
+            font-weight: bolder;
+            color: #66FCF1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Get and Set </div>
+    <div>instance of class</div>
+    <div>instance of inheritance class</div>
+</body>
+<script>
+    //-------------example:01-------------\\
+class animal{
+    constructor(name){
+        this.name = name
+    }
+    
+    get nameofanimal(){
+        return this.name
+    }
+
+    set newname(NewName){
+        this.name = NewName
+    }
+}
+
+let cat = new animal("kitty")
+console.log("Previous name : " + cat.nameofanimal)
+cat.name = "Persiancat"
+console.log("After changing name : " + cat.nameofanimal)
+
+
+//-------------example:01-------------\\
+class student{
+    constructor(name){
+        this.name = name
+    }
+     
+    get gettingname(){
+        return this.name
+    }
+
+    set settingname(setname){
+        this.name = setname
+    }
+
+}
+
+class subject extends student{
+    constructor(){
+        super()
+    }
+    hindi(){
+        console.log("Each department has different subjects")
+    }
+}
+
+//==> set and get
+let student1 = new student("Rohan")
+console.log("Previous name : " + student1.gettingname)
+student1.name = "Piyush"
+console.log("After changing name : " + student1.gettingname)
+
+//==>Instance of class
+console.log(student1 instanceof student)
+let a = 15;
+console.log(a instanceof student)
+
+//==> instance of inheritance class
+let hindi1 = new subject()
+console.log(hindi1 instanceof subject)
+console.log(hindi1 instanceof student)
+
+</script>
+</html>

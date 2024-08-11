@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    div{
+        font-size: 80px;
+        font-weight: bolder;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div>Method Overriding and super keyword</div>
+</body>
+<script>
+    class employee {
+    login() {
+        console.log(`employee logged in`)
+    }
+
+    logout() {
+        console.log(`employee logged out`)
+    }
+
+    requestleave(leave) {
+        console.log(`employee requested for ${leave} leaves (approved)`)
+    }
+}
+
+class programmer extends employee{
+    requestcoffee(x){
+        console.log(`requested for ${x}coffees`)
+    }
+
+    requestleave(leave) {
+        super.requestleave(leave)
+        console.log("One leave extra will be given ")
+        // console.log(`employee requested for ${leave+1} leaves (with one extra)`)
+    }
+}
+
+let emp1 = new employee()
+emp1.login()
+emp1.requestleave(5)
+
+let emp2 = new programmer()
+emp2.requestleave(4)
+
+</script>
+</html>

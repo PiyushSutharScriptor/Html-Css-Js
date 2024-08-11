@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #1F2833;
+        }
+        div{
+            font-size: 100px;   
+            font-weight: bolder;
+            color: #66FCF1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Static Classes with examples</div>
+</body>
+<script>
+    //-----------example:01-------------\\
+class animal{
+    constructor(name){
+        this.name = animal.capitalize(name)
+    }
+
+    walk(){
+        console.log(`${this.name} is walking`)
+    }
+
+    static capitalize(name){
+        return name.charAt(0).toUpperCase()+name.substr(1,name.length)
+    }
+
+    static areaofsquare(side){
+        return side*side;
+    }
+}
+
+let dog = new animal("chomu")
+dog.walk()
+
+
+//-----------example:02-------------\\
+class calculation{
+    constructor(){
+    }
+
+    static pi = 3.14159;
+
+    static areaofsquare(side){
+        return side*side
+    }
+
+    static areaofcircle(radius){
+        return this.pi*radius*radius
+    }
+
+    static circumferenceofcircle(radius){
+        return 2 * this.pi * radius;
+    }
+}
+
+let square = new calculation()
+console.log(`The area of square is : ${calculation.areaofsquare(10)}`)
+
+let circle = new calculation()
+console.log(`The area of circle is : ${calculation.areaofcircle(10)}`)
+
+let circle2 = new calculation()
+console.log(`The circumference of circle is ${calculation.circumferenceofcircle(10)}`)
+</script>
+</html>

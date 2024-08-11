@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        </style>
+</head>
+<body>
+    <div>
+        Overriding constructors with super keyword
+    </div>
+</body>
+<script>
+    // ------------Example:01--------------- \\
+
+class employee{
+    constructor(name,age,department){
+        console.log("Iam a constructor")
+        this.name = name
+        this.age = age
+        this.department = department
+    }
+
+    login(){
+        console.log(`${this.name} logged in.`)
+    }
+}
+
+class request extends employee{
+    // constructor(argument1,argument2 ,....){ // =>This is automatically created by js engine 
+    //     super(argument1,argument2 ,....)
+    // }
+
+    constructor(name,age,department,address){
+        super(name,age,department)
+        this.address = address 
+    }
+
+    requestleaves(leaves){
+        console.log(`${this.name} requested for ${leaves} leaves`)
+    }
+
+    information(){
+        console.log(`${this.name} from ${this.address} of age ${this.age}`)
+    }
+}
+
+let emp1 = new request("Rohan" , 45 , "software" , "Nagore")
+emp1.requestleaves(5)
+
+let emp2 = new request("Rohan" , 45 , "software" , "Nagore")
+emp1.information()
+
+
+// ------------Example:02--------------- \\
+
+class pokemon{
+    constructor(name,speed){
+        this.name = name
+        this.speed = speed
+    }
+
+    NameAndSpeed(){
+        console.log(`pokemon ${this.name} is of ${this.speed}`)
+    }
+}
+
+class steelx extends pokemon{
+    constructor(name,speed,ability){
+        super(name,speed)
+        this.ability = ability
+    }
+
+    NameSpeedAndAbility(){
+        console.log(`pokemon has abillity of ${this.ability} and has speed of ${this.speed}`)
+    }
+}
+
+let p1 = new steelx("steelx" , "250kmph" , "drill the ground" )
+p1.NameSpeedAndAbility()
+
+</script>
+</html>

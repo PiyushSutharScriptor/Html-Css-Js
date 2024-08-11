@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            font-size: 80px;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>Practice set of get, set, instance and inheritance</div>
+</body>
+<script>
+    
+class complex {
+    constructor(real,imaginery){
+        this.real = real
+        this.imaginery = imaginery
+    }
+
+    add(num){
+        this.real = this.real + num.real
+        this.imaginery = this.imaginery + num.imaginery
+    }
+
+    get rea1(){
+        return this.real
+    }
+
+    get img1(){
+        return this.imaginery
+    }
+
+    get rea2(){
+        return this.real
+    }
+
+    get img2(){
+        return this.imaginery
+    }
+
+    set setreal1(num){
+        this.real = num
+    }
+
+    set setimg1(num){
+        this.imaginery = num
+    }
+
+    set setreal2(num){
+        this.real = num
+    }
+
+    set setimg2(num){
+        this.imaginery = num
+    }
+}
+
+let a = new complex(2,3)
+let b = new complex(4,8)
+console.log("a.real1 : " + a.rea1)
+console.log("a.imaginery1 : " + a.img1)
+console.log("b.real2 : " + b.rea2)
+console.log("b.imaginery2 : " + b.img2)
+a.real = 5
+a.imaginery = 7
+b.real = 6
+b.imaginery = 9
+console.log("a.real1 : " + a.rea1)
+console.log("a.imaginery1 : " + a.img1)
+console.log("b.real2 : " + b.rea2)
+console.log("b.imaginery2 : " + b.img2)
+
+
+a.add(b)
+
+console.log(`${a.real}+${a.imaginery}i`)
+
+
+class student{
+    constructor(name){
+        this.name = name
+    }
+
+    walk(){
+        console.log(this.name + " is walking")
+    }
+}
+
+class student2 extends student{
+    walk(){
+        console.log(this.name + " is Running")
+    }
+}
+
+let s = new student2("harry")
+s.walk()
+
+console.log(s instanceof student)
+</script>
+</html>
