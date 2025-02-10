@@ -1,9 +1,9 @@
 const fs = require('fs');
-fs.writeFile('main.txt' , "Hello piyush" , (err)=>{
+fs.rename('main.txt','mymain.txt',(err)=>{
     if(err){
         console.log("error")
     }
     else{
-        console.log("created successfully")
+        console.log("renamed successfully")
     }
 })
