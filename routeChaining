@@ -1,0 +1,8 @@
+const express = require('express')
+const app = express();
+app.use(express.json())
+
+app.route('/home')
+.get('/' ,(req,res)=>{res.send("get request")})
+.post('/home:id' , (req,res)=>{res.send("Post requst")})
+.put('/home:ch' , (req,res)=>{res.send("Put request")})
