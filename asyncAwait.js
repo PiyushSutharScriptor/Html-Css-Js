@@ -1,15 +1,8 @@
-console.log("first")
-const promise = new Promise((resolve,reject)=>{
-    setTimeout(()=>{
-        console.log("second")
-    })
-})
+const express = require('express')
+const app = expressss()
+app.use(express.json())
 
-const myfun = async function(){
-    let res = await promise;
-    console.log(res);
-}
-
-console.log("third")
-
-myfun();
+app.route('/')
+.get('/' ,(req,res)=>res.send('hellow'))
+.post('/home' , (req,res)=>res.send('post'))
+.put('/home/:id , (req,res)=>res.send('put'))
